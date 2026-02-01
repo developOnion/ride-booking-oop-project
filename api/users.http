@@ -1,0 +1,62 @@
+### Get all users
+GET localhost:8080/api/users
+
+### Get a user by id
+GET localhost:8080/api/users/1
+
+### Get a user by id that does not exist
+GET localhost:8080/api/users/9999
+
+### Create a new user
+POST localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "id": 2,
+  "firstName": "Ngov",
+  "lastName": "Lysovath",
+  "email": "lysovath.ngov@student.cadt.edu.kh",
+  "phone": "85581525959",
+  "dob": "2007-04-14",
+  "gender": "MALE",
+  "createdOn": "2024-06-01T10:00:00",
+  "updatedOn": null
+}
+
+### Create a new user with invalid email
+POST localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "id": 3,
+  "firstName": "Lionel",
+  "lastName": "Messi",
+  "email": "invalid-email",
+  "phone": "85581525959",
+  "dob": "2007-04-14",
+  "gender": "MALE",
+  "createdOn": "2024-06-01T10:00:00",
+  "updatedOn": null
+}
+
+### Update a user by id
+PUT localhost:8080/api/users/2
+Content-Type: application/json
+
+{
+  "id": 2,
+  "firstName": "Ngov",
+  "lastName": "Lysovath",
+  "email": "lysovath.ngov@student.cadt.edu.kh",
+  "phone": "85581525959",
+  "dob": "2006-01-14",
+  "gender": "MALE",
+  "createdOn": "2024-06-01T10:00:00",
+  "updatedOn": "2024-06-15T12:00:00"
+}
+
+### Delete a user by id
+DELETE localhost:8080/api/users/2
+
+### Delete a user by id that does not exist
+DELETE localhost:8080/api/users/9999

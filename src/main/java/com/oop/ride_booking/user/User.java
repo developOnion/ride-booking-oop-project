@@ -3,52 +3,69 @@ package com.oop.ride_booking.user;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Positive;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class User {
 
-	private Integer id;
+	private Long id;
+
+	@NotEmpty
 	private String firstName;
+
+	@NotEmpty
 	private String lastName;
+
+	@Email
 	private String email;
-	private String phoneNumber;
+
+	@NotNull
+	private String phone;
+
+	@NotNull
 	private LocalDate dob;
+
+	@NotNull
 	private Gender gender;
-	private LocalDateTime createdAt;
-	private LocalDateTime updatedAt;
 
-	public User(LocalDateTime createdAt, Gender gender,
-				LocalDate dob, String phoneNumber,
-				String email, String lastName,
-				String firstName, Integer id) {
+	@NotNull
+	private LocalDateTime createdOn;
 
-		this.createdAt = createdAt;
-		this.gender = gender;
-		this.dob = dob;
-		this.phoneNumber = phoneNumber;
-		this.email = email;
-		this.lastName = lastName;
-		this.firstName = firstName;
+	private LocalDateTime updatedOn;
+
+	public User(Long id, String firstName,
+				String lastName, String email,
+				String phone, LocalDate dob,
+				Gender gender, LocalDateTime createdOn,
+				LocalDateTime updatedOn
+	) {
+
 		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.phone = phone;
+		this.dob = dob;
+		this.gender = gender;
+		this.createdOn = createdOn;
+		this.updatedOn = updatedOn;
 	}
 
-	public LocalDateTime getUpdatedAt() {
-		return updatedAt;
+	public LocalDateTime getUpdatedOn() {
+		return updatedOn;
 	}
 
-	public void setUpdatedAt(LocalDateTime updatedAt) {
-		this.updatedAt = updatedAt;
+	public void setUpdatedOn(LocalDateTime updatedOn) {
+		this.updatedOn = updatedOn;
 	}
 
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
+	public LocalDateTime getCreatedOn() {
+		return createdOn;
 	}
 
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
+	public void setCreatedOn(LocalDateTime createdAt) {
+		this.createdOn = createdAt;
 	}
 
 	public Gender getGender() {
@@ -67,12 +84,12 @@ public class User {
 		this.dob = dob;
 	}
 
-	public String getPhoneNumber() {
-		return phoneNumber;
+	public String getPhone() {
+		return phone;
 	}
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public String getEmail() {
@@ -99,12 +116,8 @@ public class User {
 		this.firstName = firstName;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	@Override
@@ -114,10 +127,10 @@ public class User {
 				", firstName='" + firstName + '\'' +
 				", lastName='" + lastName + '\'' +
 				", email='" + email + '\'' +
-				", phoneNumber='" + phoneNumber + '\'' +
+				", phoneNumber='" + phone + '\'' +
 				", dob=" + dob +
 				", gender=" + gender +
-				", createdAt=" + createdAt +
+				", createdAt=" + createdOn +
 				'}';
 	}
 }
