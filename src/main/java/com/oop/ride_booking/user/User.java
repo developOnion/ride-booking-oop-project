@@ -51,6 +51,17 @@ public class User {
 		this.createdOn = createdOn;
 		this.updatedOn = updatedOn;
 	}
+	public User(User user) {
+		this.id = user.id;
+		this.firstName = user.firstName;
+		this.lastName = user.lastName;
+		this.email = user.email;
+		this.phone = user.phone;
+		this.dob = user.dob;
+		this.gender = user.gender;
+		this.createdOn = user.createdOn;
+		this.updatedOn = user.updatedOn;
+	}
 
 	public LocalDateTime getUpdatedOn() {
 		return updatedOn;

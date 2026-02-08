@@ -31,7 +31,6 @@ public class Application {
 					Gender.MALE,
 					LocalDateTime.now(),
 					null);
-
 			userRepository.createUser(user);
 		};
 	}
